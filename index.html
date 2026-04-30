@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blossom Nursing & Senior Citizen Care | Home-Based Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .slide { display: none; height: 85vh; }
+        .active-slide { display: block; animation: fade 1.5s; }
+        @keyframes fade { from { opacity: 0.6; } to { opacity: 1; } }
+        
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        
+        /* Mobile Menu */
+        #mobile-menu { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); transform: translateX(100%); }
+        #mobile-menu.active { transform: translateX(0); }
+
+        /* Floating WhatsApp */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 25px; z-index: 1000; }
+        .pulse { animation: pulse-green 2s infinite; border-radius: 50%; }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float flex flex-col items-end">
+        <div class="bg-white px-4 py-2 rounded-xl shadow-xl mb-3 text-sm font-bold border-2 border-green-500 animate-bounce">
+            Chat with us! <i class="fas fa-comment-dots text-green-500"></i>
+        </div>
+        <a href="https://wa.me/919445105988?text=Hello Blossom Nursing, I am interested in your Home-Based services." 
+           target="_blank"
+           class="pulse bg-green-500 text-white w-16 h-16 flex items-center justify-center rounded-full shadow-2xl hover:bg-green-600 transition-all">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-[100] glass-nav shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 p-2 rounded-lg">
+                    <i class="fas fa-heartbeat text-white text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-black text-slate-900 leading-none">BLOSSOM</h1>
+                    <span class="text-blue-600 font-bold text-[10px] uppercase tracking-tighter">Nursing & Senior Care</span>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex space-x-8 font-bold text-slate-600 uppercase text-sm tracking-wide">
+                <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#gallery" class="hover:text-blue-600 transition">Gallery</a>
+                <a href="#pricing" class="hover:text-blue-600 transition">Pricing</a>
+                <a href="#team" class="hover:text-blue-600 transition">Employees</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="lg:hidden text-2xl text-slate-900 focus:outline-none">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 bg-white z-[110] shadow-2xl p-8 lg:hidden">
+        <div class="flex justify-between items-center mb-10">
+            <span class="font-bold text-blue-600">MENU</span>
+            <button id="close-btn" class="text-3xl">&times;</button>
+        </div>
+        <div class="flex flex-col space-y-6 font-bold text-lg text-slate-700">
+            <a href="#home" class="mob-link border-b pb-2">Home</a>
+            <a href="#about" class="mob-link border-b pb-2">About Us</a>
+            <a href="#services" class="mob-link border-b pb-2">Our Services</a>
+            <a href="#gallery" class="mob-link border-b pb-2">Gallery</a>
+            <a href="#pricing" class="mob-link border-b pb-2">Pricing</a>
+            <a href="#team" class="mob-link border-b pb-2">Our Employees</a>
+            <a href="#faq" class="mob-link border-b pb-2">FAQ</a>
+            <a href="#contact" class="mob-link border-b pb-2">Contact</a>
+            <div class="pt-6">
+                <p class="text-sm text-slate-400 mb-2 uppercase">Call Support</p>
+                <a href="tel:9445105988" class="text-blue-600 text-xl tracking-tighter"><i class="fas fa-phone-alt mr-2"></i> 9445105988</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Slider -->
+    <header id="home" class="relative pt-16 overflow-hidden">
+        <!-- Slide 1 -->
+        <div class="slide active-slide bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('pic2.png')">
+            <div class="flex items-center justify-center h-full text-center text-white px-6">
+                <div class="max-w-3xl">
+                    <span class="bg-blue-600 px-4 py-1 rounded-full text-xs font-bold uppercase mb-4 inline-block">Chennai's Trusted Care</span>
+                    <h2 class="text-4xl md:text-7xl font-extrabold mb-6">Expert Elderly Patient Care at Home</h2>
+                    <p class="text-lg md:text-2xl mb-8 font-light text-slate-200">Compassionate, professional, and fully home-based nursing services for your loved ones.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#contact" class="bg-white text-slate-900 px-8 py-4 rounded-full font-black uppercase text-sm shadow-xl hover:bg-blue-50 transition">Book Now</a>
+                        <a href="tel:9445105988" class="bg-blue-600 text-white px-8 py-4 rounded-full font-black uppercase text-sm shadow-xl hover:bg-blue-700 transition"><i class="fas fa-phone mr-2"></i> Call Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide bg-cover bg-center" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('pic3.png')">
+            <div class="flex items-center justify-center h-full text-center text-white px-6">
+                <div class="max-w-3xl">
+                    <h2 class="text-4xl md:text-7xl font-extrabold mb-6">Celebrations & Happiness</h2>
+                    <p class="text-lg md:text-2xl mb-8 font-light text-slate-200">We organize birthday and festival celebrations to keep our elderly patients joyful.</p>
+                    <a href="#services" class="bg-blue-600 text-white px-8 py-4 rounded-full font-black uppercase text-sm shadow-xl">Explore Services</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Features -->
+    <section class="py-12 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center group">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 group-hover:text-white transition">
+                    <i class="fas fa-house-chimney-user text-2xl"></i>
+                </div>
+                <h4 class="font-bold text-slate-900">100% Home Based</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-16 h-16 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-red-600 group-hover:text-white transition">
+                    <i class="fas fa-heart text-2xl"></i>
+                </div>
+                <h4 class="font-bold text-slate-900">Personal Care</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-16 h-16 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-600 group-hover:text-white transition">
+                    <i class="fas fa-user-md text-2xl"></i>
+                </div>
+                <h4 class="font-bold text-slate-900">Doctor Support</h4>
+            </div>
+            <div class="text-center group">
+                <div class="w-16 h-16 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600 group-hover:text-white transition">
+                    <i class="fas fa-headset text-2xl"></i>
+                </div>
+                <h4 class="font-bold text-slate-900">24/7 Availability</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-24 max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <img src="pic1.png" class="rounded-3xl shadow-2xl relative z-10" alt="About Blossom">
+                <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-8 rounded-3xl z-20 hidden md:block shadow-xl">
+                    <p class="text-4xl font-black">2026</p>
+                    <p class="text-xs uppercase tracking-widest font-bold">Years of Trust</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-blue-600 font-black uppercase tracking-widest text-sm mb-4">Quality Senior Care</h3>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight">Blossom Nursing and Senior Citizen Care</h2>
+                <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                    At Blossom Nursing, we understand that nothing compares to the comfort of home. That's why we provide **fully home-based services** tailored to senior citizens and elderly patients. 
+                </p>
+                <div class="space-y-4 mb-10 text-slate-700 font-medium">
+                    <div class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500 text-xl"></i> Specialized Patient Care Takers</div>
+                    <div class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500 text-xl"></i> Appointment & Hospital Assistance</div>
+                    <div class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500 text-xl"></i> Festival & Event Celebrations at Home</div>
+                </div>
+                <a href="#contact" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-blue-600 hover:text-white transition">Read More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-black mb-4">Our Dedicated Services</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto font-light">Comprehensive care solutions designed to provide dignity and comfort to the elderly.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- S1 -->
+                <div class="bg-slate-800 p-10 rounded-3xl border border-slate-700 hover:border-blue-500 transition shadow-2xl group">
+                    <i class="fas fa-user-nurse text-5xl text-blue-500 mb-8 group-hover:scale-110 transition"></i>
+                    <h4 class="text-2xl font-extrabold mb-4">Senior Care Taker</h4>
+                    <p class="text-slate-400 leading-relaxed font-light">Compassionate companions providing daily assistance, meal prep, and emotional support.</p>
+                </div>
+                <!-- S2 -->
+                <div class="bg-slate-800 p-10 rounded-3xl border border-slate-700 hover:border-blue-500 transition shadow-2xl group">
+                    <i class="fas fa-bed-pulse text-5xl text-blue-500 mb-8 group-hover:scale-110 transition"></i>
+                    <h4 class="text-2xl font-extrabold mb-4">Elderly Patient Care</h4>
+                    <p class="text-slate-400 leading-relaxed font-light">Focused nursing for bedridden or recovering patients, ensuring proper medical hygiene.</p>
+                </div>
+                <!-- S3 -->
+                <div class="bg-slate-800 p-10 rounded-3xl border border-slate-700 hover:border-blue-500 transition shadow-2xl group">
+                    <i class="fas fa-calendar-star text-5xl text-blue-500 mb-8 group-hover:scale-110 transition"></i>
+                    <h4 class="text-2xl font-extrabold mb-4">Home Celebrations</h4>
+                    <p class="text-slate-400 leading-relaxed font-light">We bring the joy home by organizing birthdays and festival events for your loved ones.</p>
+                </div>
+                <!-- S4 -->
+                <div class="bg-slate-800 p-10 rounded-3xl border border-slate-700 hover:border-blue-500 transition shadow-2xl group">
+                    <i class="fas fa-notes-medical text-5xl text-blue-500 mb-8 group-hover:scale-110 transition"></i>
+                    <h4 class="text-2xl font-extrabold mb-4">Doctor Appointments</h4>
+                    <p class="text-slate-400 leading-relaxed font-light">Complete logistics and physical support for hospital visits and medical follow-ups.</p>
+                </div>
+                <!-- S5 -->
+                <div class="bg-slate-800 p-10 rounded-3xl border border-slate-700 hover:border-blue-500 transition shadow-2xl group">
+                    <i class="fas fa-vial text-5xl text-blue-500 mb-8 group-hover:scale-110 transition"></i>
+                    <h4 class="text-2xl font-extrabold mb-4">Medical Lab Assistance</h4>
+                    <p class="text-slate-400 leading-relaxed font-light">Assistance with blood tests and lab report collections from the comfort of home.</p>
+                </div>
+                <!-- S6 -->
+                <div class="bg-slate-800 p-10 rounded-3xl border border-slate-700 hover:border-blue-500 transition shadow-2xl group">
+                    <i class="fas fa-hand-holding-heart text-5xl text-blue-500 mb-8 group-hover:scale-110 transition"></i>
+                    <h4 class="text-2xl font-extrabold mb-4">Post-Op Recovery</h4>
+                    <p class="text-slate-400 leading-relaxed font-light">Specialized post-surgery care to ensure a smooth and safe recovery process at home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employees / Team -->
+    <section id="team" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-black text-center mb-16 text-slate-900">Our Professional Team</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <img src="https://i.pravatar.cc/150?u=nurse1" class="w-32 h-32 rounded-full mx-auto mb-6 grayscale hover:grayscale-0 transition shadow-xl border-4 border-blue-50" alt="Nurse">
+                    <h5 class="font-bold text-xl">Ms. Priya</h5>
+                    <p class="text-blue-600 text-sm font-bold uppercase">Senior Nurse</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://i.pravatar.cc/150?u=nurse2" class="w-32 h-32 rounded-full mx-auto mb-6 grayscale hover:grayscale-0 transition shadow-xl border-4 border-blue-50" alt="Nurse">
+                    <h5 class="font-bold text-xl">Mr. Rahul</h5>
+                    <p class="text-blue-600 text-sm font-bold uppercase">Patient Attendant</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://i.pravatar.cc/150?u=nurse3" class="w-32 h-32 rounded-full mx-auto mb-6 grayscale hover:grayscale-0 transition shadow-xl border-4 border-blue-50" alt="Nurse">
+                    <h5 class="font-bold text-xl">Ms. Kavita</h5>
+                    <p class="text-blue-600 text-sm font-bold uppercase">Care Specialist</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://i.pravatar.cc/150?u=nurse4" class="w-32 h-32 rounded-full mx-auto mb-6 grayscale hover:grayscale-0 transition shadow-xl border-4 border-blue-50" alt="Nurse">
+                    <h5 class="font-bold text-xl">Mr. Arvind</h5>
+                    <p class="text-blue-600 text-sm font-bold uppercase">Emergency Aide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-slate-900 mb-4">Care in Action</h2>
+                <p class="text-slate-600">Glimpses of our daily care and joyful celebrations.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="space-y-4">
+                    <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg hover:scale-[1.02] transition" alt="Care 1">
+                    <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg hover:scale-[1.02] transition" alt="Care 2">
+                </div>
+                <div class="space-y-4">
+                    <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg hover:scale-[1.02] transition" alt="Care 3">
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg hover:scale-[1.02] transition" alt="Care 4">
+                </div>
+                <div class="space-y-4">
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg hover:scale-[1.02] transition" alt="Care 5">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg hover:scale-[1.02] transition" alt="Care 6">
+                </div>
+                <div class="space-y-4">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg hover:scale-[1.02] transition" alt="Care 7">
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=400&q=80" class="rounded-2xl shadow-lg hover:scale-[1.02] transition" alt="Care 8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-slate-900 mb-4">Affordable Care Plans</h2>
+                <p class="text-slate-600">Choose a plan that best fits your family's needs.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic -->
+                <div class="border-2 border-slate-100 p-8 rounded-[40px] hover:border-blue-500 transition group">
+                    <h3 class="text-xl font-bold mb-2">Basic Assistance</h3>
+                    <p class="text-slate-500 text-sm mb-6">Ideal for active seniors needing minor help.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-black">₹15k</span>
+                        <span class="text-slate-400">/month onwards</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-sm font-medium text-slate-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Daily Companion Support</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Meal Preparation Help</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Medication Reminders</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> 8-Hour Day Shift</li>
+                    </ul>
+                    <a href="#contact" class="block text-center w-full bg-slate-100 group-hover:bg-blue-600 group-hover:text-white py-4 rounded-2xl font-bold transition">Get Started</a>
+                </div>
+                <!-- Standard -->
+                <div class="border-4 border-blue-600 p-8 rounded-[40px] relative shadow-2xl scale-105 bg-white">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-6 py-1 rounded-full text-xs font-bold uppercase">Most Popular</div>
+                    <h3 class="text-xl font-bold mb-2">Patient Nursing</h3>
+                    <p class="text-slate-500 text-sm mb-6">Full care for recovering or bedridden patients.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-black">₹25k</span>
+                        <span class="text-slate-400">/month onwards</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-sm font-medium text-slate-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> 24/7 Attendant Support</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Hygiene & Bedside Care</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Doctor Visit Coordination</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Basic Vitals Monitoring</li>
+                    </ul>
+                    <a href="#contact" class="block text-center w-full bg-blue-600 text-white py-4 rounded-2xl font-bold shadow-lg hover:bg-blue-700 transition">Select Plan</a>
+                </div>
+                <!-- Premium -->
+                <div class="border-2 border-slate-100 p-8 rounded-[40px] hover:border-blue-500 transition group">
+                    <h3 class="text-xl font-bold mb-2">Premium Medical</h3>
+                    <p class="text-slate-500 text-sm mb-6">Advanced nursing with full logistics.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-black">₹40k</span>
+                        <span class="text-slate-400">/month onwards</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-sm font-medium text-slate-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Registered Nurse Support</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Post-Op Medical Care</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Lab & Hospital Logistics</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Event & Festival Hosting</li>
+                    </ul>
+                    <a href="#contact" class="block text-center w-full bg-slate-100 group-hover:bg-blue-600 group-hover:text-white py-4 rounded-2xl font-bold transition">Get Premium</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <i class="fas fa-quote-left text-5xl opacity-30 mb-8"></i>
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">"Blossom Nursing treated my father with so much respect. Their home-based service in Chennai is truly a blessing for working professionals like us."</h2>
+            <div class="flex items-center justify-center gap-4">
+                <div class="h-12 w-12 rounded-full bg-blue-400"></div>
+                <div class="text-left">
+                    <p class="font-black text-lg leading-none">R. Krishnan</p>
+                    <p class="text-sm opacity-80">Chennai, Tamil Nadu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 max-w-4xl mx-auto px-6">
+        <h2 class="text-4xl font-black text-center mb-16 text-slate-900">FAQ</h2>
+        <div class="space-y-4">
+            <details class="group bg-white p-6 rounded-3xl shadow-md border border-slate-100 cursor-pointer" open>
+                <summary class="flex justify-between items-center font-bold text-lg list-none text-slate-800">
+                    Is your service only for Senior Citizens?
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition text-blue-600"></i>
+                </summary>
+                <p class="mt-4 text-slate-600 leading-relaxed">While we specialize in Senior Citizen care, we also provide professional nursing for patients of all ages recovering from surgery or long-term illness, strictly on a home-based model.</p>
+            </details>
+            <details class="group bg-white p-6 rounded-3xl shadow-md border border-slate-100 cursor-pointer">
+                <summary class="flex justify-between items-center font-bold text-lg list-none text-slate-800">
+                    What areas in Chennai do you cover?
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition text-blue-600"></i>
+                </summary>
+                <p class="mt-4 text-slate-600 leading-relaxed">Our headquarters is in Arumbakkam, but we provide home-based services across all major parts of Chennai including Anna Nagar, MMDA, and beyond.</p>
+            </details>
+            <details class="group bg-white p-6 rounded-3xl shadow-md border border-slate-100 cursor-pointer">
+                <summary class="flex justify-between items-center font-bold text-lg list-none text-slate-800">
+                    Do you help with medicine and appointments?
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition text-blue-600"></i>
+                </summary>
+                <p class="mt-4 text-slate-600 leading-relaxed">Yes, our care takers manage medication timings and accompany patients for doctor and hospital appointments.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Contact & Map -->
+    <section id="contact" class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-4xl font-black mb-4">Contact Our HQ</h2>
+                <p class="text-slate-600 mb-10">Reach out to us for immediate nursing support or inquiries.</p>
+                <div class="space-y-8">
+                    <div class="flex items-start gap-5">
+                        <div class="bg-blue-600 w-12 h-12 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg">
+                            <i class="fas fa-map-marked-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-black text-slate-900 uppercase text-xs tracking-widest mb-1">Headquarters</p>
+                            <p class="text-slate-600 font-medium">9/135, MMDA Signal, near Vallavan Hotel, above Eye Optics, I Block, SIDCO Industrial Estate, MMDA Colony, Arumbakkam, Chennai, Tamil Nadu 600106</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-5">
+                        <div class="bg-blue-600 w-12 h-12 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg">
+                            <i class="fas fa-phone-volume text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-black text-slate-900 uppercase text-xs tracking-widest mb-1">Call Us</p>
+                            <a href="tel:9445105988" class="text-2xl font-black text-blue-600">9445105988</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-5">
+                        <div class="bg-blue-600 w-12 h-12 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg">
+                            <i class="fas fa-envelope-open-text text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-black text-slate-900 uppercase text-xs tracking-widest mb-1">Email Support</p>
+                            <p class="text-slate-600 font-medium">smartcareadwords@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[500px] rounded-[40px] overflow-hidden shadow-2xl border-[10px] border-white">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.512347209!2d80.2084776!3d13.0666981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52668b082e6665%3A0x66f68c37d45e43c5!2sMMDA%20Colony%2C%20Arumbakkam%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1714450000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="bg-blue-600 p-2 rounded-lg"><i class="fas fa-heartbeat text-xl"></i></div>
+                    <h1 class="text-2xl font-black">BLOSSOM CARE</h1>
+                </div>
+                <p class="text-slate-400 max-w-sm mb-8 leading-relaxed">Providing high-quality home-based patient care and senior citizen support services across Chennai. We celebrate life with our patients.</p>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/919445105988" class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center hover:bg-pink-600 transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-black text-sm uppercase tracking-widest mb-8 border-b border-slate-800 pb-2 inline-block">Quick Links</h4>
+                <ul class="space-y-4 text-slate-400 font-bold text-sm">
+                    <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+                    <li><a href="#about" class="hover:text-blue-500">About Us</a></li>
+                    <li><a href="#services" class="hover:text-blue-500">Services</a></li>
+                    <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-black text-sm uppercase tracking-widest mb-8 border-b border-slate-800 pb-2 inline-block">Support</h4>
+                <p class="text-slate-400 text-sm font-bold mb-4">Monday - Sunday</p>
+                <p class="text-blue-500 text-xl font-black">24 Hours Service</p>
+                <p class="text-slate-400 text-xs mt-4">Head Office: Arumbakkam, Chennai</p>
+            </div>
+        </div>
+        <div class="text-center text-slate-600 text-[10px] uppercase font-bold tracking-widest border-t border-slate-900 pt-10">
+            &copy; 2026 Blossom Nursing & Senior Care. Developed for Professional Services.
+        </div>
+    </footer>
+
+    <!-- Slider & Menu Script -->
+    <script>
+        // Hero Slider Logic
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        function rotateSlides() {
+            slides.forEach(s => s.classList.remove('active-slide'));
+            slideIndex = (slideIndex + 1) % slides.length;
+            slides[slideIndex].classList.add('active-slide');
+        }
+        setInterval(rotateSlides, 6000);
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mob-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        links.forEach(l => l.addEventListener('click', toggleMenu));
+    </script>
+</body>
+</html>
