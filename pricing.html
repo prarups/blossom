@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Blossom Nursing & Senior Care Chennai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .glass-nav { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); }
+        #mobile-menu { transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); transform: translateX(100%); }
+        #mobile-menu.active { transform: translateX(0); }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 25px; z-index: 1000; }
+        .pulse { animation: pulse-green 2s infinite; border-radius: 50%; }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34,197,94,0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(34,197,94,0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Floating WhatsApp -->
+    <div class="whatsapp-float flex flex-col items-end">
+        <div class="bg-white px-4 py-2 rounded-xl shadow-xl mb-3 text-sm font-bold border-2 border-green-500 animate-bounce">
+            Chat with us! <i class="fas fa-comment-dots text-green-500"></i>
+        </div>
+        <a href="https://wa.me/919445105988?text=Hello Blossom Nursing, I am interested in your Home-Based services."
+           target="_blank"
+           class="pulse bg-green-500 text-white w-16 h-16 flex items-center justify-center rounded-full shadow-2xl hover:bg-green-600 transition-all">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-[100] glass-nav shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="bg-blue-600 p-2 rounded-lg"><i class="fas fa-heartbeat text-white text-xl"></i></div>
+                <div>
+                    <h1 class="text-xl font-black text-slate-900 leading-none">BLOSSOM</h1>
+                    <span class="text-blue-600 font-bold text-[10px] uppercase tracking-tighter">Nursing & Senior Care</span>
+                </div>
+            </a>
+            <div class="hidden lg:flex space-x-8 font-bold text-slate-600 uppercase text-sm tracking-wide">
+                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                <a href="about.html" class="hover:text-blue-600 transition">About</a>
+                <a href="services.html" class="hover:text-blue-600 transition">Services</a>
+                <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
+                <a href="pricing.html" class="text-blue-600 border-b-2 border-blue-600 transition">Pricing</a>
+                <a href="team.html" class="hover:text-blue-600 transition">Employees</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+            </div>
+            <button id="menu-btn" class="lg:hidden text-2xl text-slate-900 focus:outline-none">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 bg-white z-[110] shadow-2xl p-8 lg:hidden">
+        <div class="flex justify-between items-center mb-10">
+            <span class="font-bold text-blue-600">MENU</span>
+            <button id="close-btn" class="text-3xl">&times;</button>
+        </div>
+        <div class="flex flex-col space-y-6 font-bold text-lg text-slate-700">
+            <a href="index.html" class="mob-link border-b pb-2">Home</a>
+            <a href="about.html" class="mob-link border-b pb-2">About Us</a>
+            <a href="services.html" class="mob-link border-b pb-2">Our Services</a>
+            <a href="gallery.html" class="mob-link border-b pb-2">Gallery</a>
+            <a href="pricing.html" class="mob-link border-b pb-2 text-blue-600">Pricing</a>
+            <a href="team.html" class="mob-link border-b pb-2">Our Employees</a>
+            <a href="contact.html" class="mob-link border-b pb-2">Contact</a>
+            <div class="pt-6">
+                <p class="text-sm text-slate-400 mb-2 uppercase">Call Support</p>
+                <a href="tel:9445105988" class="text-blue-600 text-xl tracking-tighter"><i class="fas fa-phone-alt mr-2"></i>9445105988</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Banner -->
+    <div class="pt-16 bg-gradient-to-r from-green-700 to-blue-700 text-white py-20 text-center">
+        <h2 class="text-5xl font-black mb-3">Pricing Plans</h2>
+        <p class="text-green-100 font-light text-lg">Affordable care for every family</p>
+        <div class="flex justify-center gap-2 mt-4 text-sm font-bold text-green-200">
+            <a href="index.html" class="hover:text-white">Home</a> <span>/</span> <span class="text-white">Pricing</span>
+        </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-slate-900 mb-4">Affordable Care Plans</h2>
+                <p class="text-slate-600">Choose a plan that best fits your family's needs.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic -->
+                <div class="border-2 border-slate-100 p-8 rounded-[40px] hover:border-blue-500 transition group">
+                    <h3 class="text-xl font-bold mb-2">Basic Assistance</h3>
+                    <p class="text-slate-500 text-sm mb-6">Ideal for active seniors needing minor help.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-black">₹15k</span>
+                        <span class="text-slate-400">/month onwards</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-sm font-medium text-slate-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Daily Companion Support</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Meal Preparation Help</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Medication Reminders</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> 8-Hour Day Shift</li>
+                    </ul>
+                    <a href="contact.html" class="block text-center w-full bg-slate-100 group-hover:bg-blue-600 group-hover:text-white py-4 rounded-2xl font-bold transition">Get Started</a>
+                </div>
+                <!-- Standard -->
+                <div class="border-4 border-blue-600 p-8 rounded-[40px] relative shadow-2xl scale-105 bg-white">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-6 py-1 rounded-full text-xs font-bold uppercase">Most Popular</div>
+                    <h3 class="text-xl font-bold mb-2">Patient Nursing</h3>
+                    <p class="text-slate-500 text-sm mb-6">Full care for recovering or bedridden patients.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-black">₹25k</span>
+                        <span class="text-slate-400">/month onwards</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-sm font-medium text-slate-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> 24/7 Attendant Support</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Hygiene & Bedside Care</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Doctor Visit Coordination</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Basic Vitals Monitoring</li>
+                    </ul>
+                    <a href="contact.html" class="block text-center w-full bg-blue-600 text-white py-4 rounded-2xl font-bold shadow-lg hover:bg-blue-700 transition">Select Plan</a>
+                </div>
+                <!-- Premium -->
+                <div class="border-2 border-slate-100 p-8 rounded-[40px] hover:border-blue-500 transition group">
+                    <h3 class="text-xl font-bold mb-2">Premium Medical</h3>
+                    <p class="text-slate-500 text-sm mb-6">Advanced nursing with full logistics.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-black">₹40k</span>
+                        <span class="text-slate-400">/month onwards</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-sm font-medium text-slate-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Registered Nurse Support</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Post-Op Medical Care</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Lab & Hospital Logistics</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Event & Festival Hosting</li>
+                    </ul>
+                    <a href="contact.html" class="block text-center w-full bg-slate-100 group-hover:bg-blue-600 group-hover:text-white py-4 rounded-2xl font-bold transition">Get Premium</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="bg-blue-600 p-2 rounded-lg"><i class="fas fa-heartbeat text-xl"></i></div>
+                    <h1 class="text-2xl font-black">BLOSSOM CARE</h1>
+                </div>
+                <p class="text-slate-400 max-w-sm mb-8 leading-relaxed">Providing high-quality home-based patient care and senior citizen support services across Chennai.</p>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/919445105988" class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center hover:bg-pink-600 transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-black text-sm uppercase tracking-widest mb-8 border-b border-slate-800 pb-2 inline-block">Quick Links</h4>
+                <ul class="space-y-4 text-slate-400 font-bold text-sm">
+                    <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
+                    <li><a href="about.html" class="hover:text-blue-500">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-blue-500">Services</a></li>
+                    <li><a href="gallery.html" class="hover:text-blue-500">Gallery</a></li>
+                    <li><a href="pricing.html" class="hover:text-blue-500">Pricing</a></li>
+                    <li><a href="team.html" class="hover:text-blue-500">Employees</a></li>
+                    <li><a href="contact.html" class="hover:text-blue-500">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-black text-sm uppercase tracking-widest mb-8 border-b border-slate-800 pb-2 inline-block">Support</h4>
+                <p class="text-slate-400 text-sm font-bold mb-4">Monday – Sunday</p>
+                <p class="text-blue-500 text-xl font-black">24 Hours Service</p>
+                <p class="text-slate-400 text-xs mt-4">Head Office: Arumbakkam, Chennai</p>
+                <a href="tel:9445105988" class="mt-4 block text-white font-bold text-lg hover:text-blue-400"><i class="fas fa-phone mr-2"></i>9445105988</a>
+            </div>
+        </div>
+        <div class="text-center text-slate-600 text-[10px] uppercase font-bold tracking-widest border-t border-slate-900 pt-10">
+            &copy; 2026 Blossom Nursing & Senior Care. Developed for Professional Services.
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mob-link');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+        closeBtn.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        links.forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('active')));
+    </script>
+</body>
+</html>
